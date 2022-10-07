@@ -1,4 +1,5 @@
 import{ useState} from "react"
+import { Link } from "react-router-dom";
 import calcularGramas from "../../service/gramas.js";
 
 export default function Index() {
@@ -11,6 +12,9 @@ export default function Index() {
     }
     return (
         <main>
+            <ul>
+                    <li> <Link to='/'>Menu</Link> </li>
+            </ul>
             <h1>Valor Sorvete</h1>
 
             <div>

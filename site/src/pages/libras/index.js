@@ -1,4 +1,5 @@
 import{ useState} from "react"
+import { Link } from "react-router-dom";
 import libra from "../../service/libras";
 
 export default function Index() {
@@ -12,6 +13,9 @@ export default function Index() {
     }
     return (
         <main>
+            <ul>
+                    <li> <Link to='/'>Menu</Link> </li>
+            </ul>
             <h1>Libra</h1>
 
             <div>
