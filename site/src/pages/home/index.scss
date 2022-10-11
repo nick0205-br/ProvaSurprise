@@ -1,4 +1,4 @@
-.page-home{
+
     .ct1-home{
         background-color: #f0ecec;
         padding: 1em 0em 0em 0em;
@@ -37,4 +37,15 @@
     .ct2-list > ul > li{
         margin: 1em;
     }
-}
+    .link:link {
+        color:#ffffff;
+        text-decoration:none;
+      }
+      .link:visited {
+        color:#ffffff;
+        text-decoration:none;
+      }
+      .link:hover {
+        color:#000000;
+        text-decoration:wavy;
+      }

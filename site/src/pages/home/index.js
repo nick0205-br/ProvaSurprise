@@ -13,12 +13,12 @@ export default function Index() {
                 <div className="ct2-list">
                 <h2>Conteúdos</h2>
                 <ul>
-                    <li> <Link to='/acai'>Cálculo Açaí</Link> </li>
-                    <li> <Link to='/gramas'>Cálculo Gramas</Link> </li>
-                    <li> <Link to='/libra'> Libra </Link> </li>
-                    <li> <Link to='/febre'> Verificar Temperatura </Link> </li>
-                    <li> <Link to='/paradas'> Verificar Paradas </Link> </li>
-                    <li> <Link to='/salario'> Valor final Salário </Link> </li>
+                    <li> <Link className="link" to='/acai'>Cálculo Açaí</Link> </li>
+                    <li> <Link className="link" to='/gramas'>Cálculo Gramas</Link> </li>
+                    <li> <Link className="link" to='/libra'> Libra </Link> </li>
+                    <li> <Link className="link" to='/febre'> Verificar Temperatura </Link> </li>
+                    <li> <Link className="link" to='/paradas'> Verificar Paradas </Link> </li>
+                    <li> <Link className="link" to='/salario'> Valor final Salário </Link> </li>
                 </ul>
                 </div>
             </div>
