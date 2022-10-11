@@ -16,6 +16,9 @@ export default function Index() {
                     <li> <Link to='/acai'>Cálculo Açaí</Link> </li>
                     <li> <Link to='/gramas'>Cálculo Gramas</Link> </li>
                     <li> <Link to='/libra'> Libra </Link> </li>
+                    <li> <Link to='/febre'> Verificar Temperatura </Link> </li>
+                    <li> <Link to='/paradas'> Verificar Paradas </Link> </li>
+                    <li> <Link to='/salario'> Valor final Salário </Link> </li>
                 </ul>
                 </div>
             </div>

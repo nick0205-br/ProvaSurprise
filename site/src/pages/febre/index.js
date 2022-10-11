@@ -1,32 +1,32 @@
 import{ useState} from "react"
 import { Link } from "react-router-dom";
-import calcularGramas from "../../service/gramas.js";
+import situacaoFebre from "../../service/febre.js";
 
 export default function Index() {
-    const [number,setNumber] = useState('');
+    const [numberone,setNumberone] = useState('');
     const [resposta,setResposta]= useState('');
 
-    async function verificarResultado(){
-        let x = calcularGramas(number);
+    async function verificar(){
+        let x = situacaoFebre(numberone)
         setResposta(x);
     }
     return (
         <main>
             <Link to='/'>Menu</Link>
-            <h1>Valor Sorvete</h1>
+            <h1>Verificação de Temperatura</h1>
 
             <div>
-                Peso em Gramas:<input type="number" value={number} onChange={e => setNumber(Number(e.target.value))}></input>
+                Temperatura:<input type="number" value={numberone} onChange={e => setNumberone(Number(e.target.value))}></input>
             </div>
             <div>
-                <button onClick ={verificarResultado}>Verificar</button>
+                <button onClick ={verificar}>Verificar</button>
             </div>
-            <div>{resposta}</div>
+            <div>A situação para sua temperatura é {resposta} </div>
             <br></br>
             <h2>Acesse Outras Ferramentas</h2>
             <Link to='/açaí'>Valor Total do seu Açaí</Link>
             <br></br>
-            <Link to='/febre'>Você Está com Febre?</Link>
+            <Link to='/gramas'>Valor Total do seu Sorvete</Link>
             <br></br>
             <Link to='/libras'>Você é do Signo de Libra?</Link>
             <br></br>
