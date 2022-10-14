@@ -1,38 +1,53 @@
-import{ useState} from "react"
+import{ useEffect, useState} from "react";
 import { Link } from "react-router-dom";
-import calcularAcai from "../../service/acai.js"
+import totalCompra from "../../service/ingresso.js";
 import '../home/index.scss';
 
 export default function Index() {
-    const [numberone,setNumberone] = useState('');
-    const [numbertwo,setNumbertwo] = useState('');
-    const [numberthree,setNumberthree] = useState('');
-    const [numberfour,setNumberfour] = useState('');
+    const [numberone,setNumberone] = useState(0);
+    const [numbertwo,setNumbertwo] = useState(0);
+    const [weekendDay,setWeekendDay] = useState('');
+    const [nationality,setNationality] = useState(false);
     const [resposta,setResposta]= useState('');
 
+
+    useEffect(() => {
+        verificar();
+    })
+
     async function verificar(){
-        let x = calcularAcai(numberone, numbertwo, numberthree, numberfour)
+        let x = totalCompra(numberone, numbertwo, weekendDay, nationality)
         setResposta(x);
     }
+    console.log(resposta)
+    
     return (
         <main>
             <div className="ct1-home">
-                <Link  className="linkh" to='/'>Menu</Link>
+                <Link className="linkh" to='/'>Menu</Link>
             </div>
             <div className="ct2-conteudo">
-                <h1>Valor Total Açaí</h1>
+                <h1>Valor Total Ingressos</h1>
                 <div className="ct2-list">
                     <div>
-                        Quantidade Pequeno: <input type="number" value={numberone} onChange={e => setNumberone(Number(e.target.value))}></input>
+                        Quantidade Inteiras: <input type="number" value={numberone} onChange={e => setNumberone(Number(e.target.value))}></input>
                     </div>
                     <div>
-                        Quantidade Médio: <input type="number" value={numbertwo} onChange={e => setNumbertwo(Number(e.target.value))}></input>
+                        Quantidade Meia Entrada: <input type="number" value={numbertwo}  onChange={e => setNumbertwo(Number(e.target.value))}></input>
                     </div>
                     <div>
-                        Quantidade Grande: <input type="number" value={numberthree} onChange={e => setNumberthree(Number(e.target.value))}></input>
+                       Dia da Semana: <select value={weekendDay}onChange={e => setWeekendDay(e.target.value)}>
+                            <option value="segunda-feira"> Segunda-Feira </option>
+                            <option value="terça-feira"> Terça-Feira </option>
+                            <option value="quarta-feira"> Quarta-Feira </option>
+                            <option value="quinta-feira"> Quinta-Feira </option>
+                            <option value="sexta-feira"> Sexta-Feira </option>
+                            <option value="sábado"> Sábado </option>
+                            <option value="domingo"> Domingo </option>
+                        </select>
                     </div>
                     <div>
-                        Desconto: <input type="number" value={numberfour} onChange={e => setNumberfour(Number(e.target.value))}></input>
+                        Filme Nacional?  <input className="check" type="checkbox" value={nationality} onChange={e => setNationality(e.target.checked)}/>
                     </div>
                     <div>
                         <button onClick ={verificar}>Verificar</button>

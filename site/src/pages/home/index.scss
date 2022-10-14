@@ -11,7 +11,8 @@
     .linkh:link {
         color:#000000;
         text-decoration:none;
-        font-size: larger;
+        font-size: x-large;
+        font-weight: 400;
       }
       .linkh:visited {
         color:#000000;
@@ -20,6 +21,8 @@
       .linkh:hover {
         color:#616161;
         text-decoration:wavy;
+        font-size:xx-large;
+        font-weight: 500;
       }
     
     .ct2-conteudo{
@@ -29,14 +32,20 @@
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;
+
     }
+    select{
+      border-radius: 20px;
+  }
     input, button{
         border-radius: 20px;
     }
     .ct2-list{
         margin-top: 1em;
+        margin-bottom: 1em;
         width: 13em;
-        background-color: #50a2dd;
+        background-color: #055fb4;
+        transition: background-color 1s ease 0.5s;
         border: 1px solid black;
         border-radius: 20px;
         padding: 15px;
@@ -45,6 +54,10 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        filter: drop-shadow(0px 0px 11px #000);
+    }
+    .ct2-list:hover{
+      background-color: #3190d4;
     }
     .ct2-list > ul > li{
         margin: 1em;
@@ -60,4 +73,5 @@
       .link:hover {
         color:#000000;
         text-decoration:wavy;
+        font-size:large;
       }

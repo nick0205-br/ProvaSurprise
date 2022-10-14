@@ -7,6 +7,8 @@ import Libras from './pages/libras'
 import Febre from './pages/febre'
 import Paradas from './pages/paradas'
 import Salário from './pages/salario'
+import Orçamento from './pages/orçamento'
+import Ingresso from './pages/ingresso'
 
 export default function SiteRoutes() {
     return(
@@ -19,6 +21,8 @@ export default function SiteRoutes() {
                 <Route path='/febre' element={<Febre />} />
                 <Route path='/paradas' element={<Paradas />} />
                 <Route path='/salario' element={<Salário />} />
+                <Route path='/orcamento' element={<Orçamento />} />
+                <Route path='/ingresso' element={<Ingresso />} />
             </Routes>
         </BrowserRouter>
     )

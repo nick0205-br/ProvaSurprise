@@ -39,6 +39,10 @@ export default function Index() {
                     <Link className="link" to='/paradas'>Quantas Vezes Você Vai Abastecer?</Link>
                     <br></br>
                     <Link className="link" to='/salario'>Qual o seu Salário Liquído?</Link>
+                    <br></br>
+                    <Link className="link" to='/orcamento'>Seus Gastos estão Dentro do seu Orçamento?</Link>
+                    <br></br>
+                    <Link className="link" to='/ingresso'>Valor Total dos Seus Ingressos pro Cinema</Link>
                 </div>
                 
             </div>
