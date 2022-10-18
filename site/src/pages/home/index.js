@@ -19,6 +19,9 @@ export default function Index() {
                     <li> <Link className="link" to='/febre'> Verificar Temperatura </Link> </li>
                     <li> <Link className="link" to='/paradas'> Verificar Paradas </Link> </li>
                     <li> <Link className="link" to='/salario'> Valor final Salário </Link> </li>
+                    <li> <Link className="link" to='/contarAte'> Contador entre Números </Link> </li>
+                    <li> <Link className="link" to='/linha'> Criar Uma Linha </Link> </li>
+                    <li> <Link className="link" to='/retangulo'> Criar Um Retângulo </Link> </li>
                 </ul>
                 </div>
             </div>

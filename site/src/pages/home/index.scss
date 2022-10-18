@@ -35,7 +35,7 @@
     }
     .ct2-list{
         margin-top: 1em;
-        width: 13em;
+        min-width: 13em;
         background-color: #50a2dd;
         border: 1px solid black;
         border-radius: 20px;
@@ -60,4 +60,14 @@
       .link:hover {
         color:#000000;
         text-decoration:wavy;
+      }
+      .resposta{
+        display: flex;
+        flex-direction: row;
+      }
+      .answer{
+        background-color: #50a2dd;
+        border: 1px solid black;
+        border-radius: 20px;
+        min-width: 13em;
       }
