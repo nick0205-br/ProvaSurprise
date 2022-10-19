@@ -1,14 +1,15 @@
 import{ useState} from "react"
 import { Link } from "react-router-dom";
-import calcularGramas from "../../service/gramas.js";
+import sitOrcamento from "../../service/orcamento.js";
 import '../home/index.scss';
 
 export default function Index() {
-    const [number,setNumber] = useState('');
+    const [numberone,setNumberone] = useState('');
+    const [numbertwo,setNumbertwo] = useState('');
     const [resposta,setResposta]= useState('');
 
-    async function verificarResultado(){
-        let x = calcularGramas(number);
+    async function verificar(){
+        let x = sitOrcamento(numberone, numbertwo)
         setResposta(x);
     }
     return (
@@ -17,22 +18,25 @@ export default function Index() {
                 <Link className="linkh" to='/'>Menu</Link>
             </div>
             <div className="ct2-conteudo">
-                <h1>Valor Total Sorvete</h1>
+                <h1>Situação Orçamento</h1>
                 <div className="ct2-list">
                     <div>
-                        Peso em Gramas: <input type="number" value={number} onChange={e => setNumber(Number(e.target.value))}></input>
+                        Valor Total dos Ganhos: <input type="number" value={numberone} onChange={e => setNumberone(Number(e.target.value))}></input>
                     </div>
                     <div>
-                        <button onClick ={verificarResultado}>Verificar</button>
+                        Valor Total dos Gastos: <input type="number" value={numbertwo} onChange={e => setNumbertwo(Number(e.target.value))}></input>
+                    </div>
+                    <div>
+                        <button onClick ={verificar}>Verificar</button>
                     </div>
                     <div>{resposta}</div>
                 </div>
                 <br></br>
                 <div className="ct2-list">
                     <h2>Acesse Outras Ferramentas</h2>
-                    <Link className="link" to='/acai'>Valor Total do seu Açaí</Link>
-                    <br></br>
                     <Link className="link" to='/febre'>Você Está com Febre?</Link>
+                    <br></br>
+                    <Link className="link" to='/gramas'>Valor Total do seu Sorvete</Link>
                     <br></br>
                     <Link className="link" to='/libra'>Você é do Signo de Libra?</Link>
                     <br></br>
@@ -40,13 +44,10 @@ export default function Index() {
                     <br></br>
                     <Link className="link" to='/salario'>Qual o seu Salário Liquído?</Link>
                     <br></br>
-                    <Link className="link" to='/orcamento'>Seus Gastos estão Dentro do seu Orçamento?</Link>
-                    <br></br>
                     <Link className="link" to='/ingresso'>Valor Total dos Seus Ingressos pro Cinema</Link>
                 </div>
-                
             </div>
-            
+
             
         </main>
     )

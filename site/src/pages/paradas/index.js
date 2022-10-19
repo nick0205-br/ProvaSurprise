@@ -47,6 +47,13 @@ export default function Index() {
                     <Link className="link" to='/libra'>Você é do Signo de Libra?</Link>
                     <br></br>
                     <Link className="link" to='/salario'>Qual o seu Salário Liquído?</Link>
+
+                    <Link className="link" to='/salario'>Qual o seu Salãrio Liquído?</Link>
+                    <br></br>
+                    <Link className="link" to='/orcamento'>Seus Gastos estão Dentro do seu Orçamento?</Link>
+                    <br></br>
+                    <Link className="link" to='/ingresso'>Valor Total dos Seus Ingressos pro Cinema</Link>
+
                 </div>
             </div>
            

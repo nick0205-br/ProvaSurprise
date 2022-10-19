@@ -10,6 +10,9 @@ import Salário from './pages/salario'
 import ContarAte from './pages/contarAte'
 import Linha from './pages/linha'
 import Retângulo from './pages/retangulo'
+import Orçamento from './pages/orçamento'
+import Ingresso from './pages/ingresso'
+
 
 export default function SiteRoutes() {
     return(
@@ -25,6 +28,9 @@ export default function SiteRoutes() {
                 <Route path='/contarAte' element={<ContarAte />} />
                 <Route path='/linha' element={<Linha />} />
                 <Route path='/retangulo' element={<Retângulo />} />
+                <Route path='/orcamento' element={<Orçamento />} />
+                <Route path='/ingresso' element={<Ingresso />} />
+
             </Routes>
         </BrowserRouter>
     )
