@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import retanguloStar from "../../service/retanguloStar.js"
 import retanguloCircle from "../../service/retanguloCircle.js";
 import retanguloQuarter from "../../service/retanguloQuarter.js";
-
+import retanguloPhoto from "../../service/retanguloFoto.js";
 import '../home/index.scss';
+
 
 export default function Index() {
     const [numberone,setNumberone] = useState('');
@@ -12,6 +13,7 @@ export default function Index() {
     const [respostaS,setRespostaS]= useState([]);
     const [respostaC,setRespostaC]= useState([]);
     const [respostaQ,setRespostaQ]= useState([]);
+    const [respostaP,setRespostaP]= useState([]);
 
     async function verificar(){
         let x = retanguloStar(numberone, numbertwo)
@@ -22,6 +24,9 @@ export default function Index() {
 
         let z = retanguloCircle(numberone, numbertwo)
         setRespostaC(z);
+
+        let a = retanguloPhoto(numberone, numbertwo)
+        setRespostaP(a)
     }
     return (
         <main>
@@ -44,6 +49,7 @@ export default function Index() {
                     <div>{respostaS.map(respostaS => <p>{respostaS}</p>)}</div>
                     <div>{respostaQ.map(respostaQ => <p>{respostaQ}</p>)}</div>
                     <div>{respostaC.map(respostaC => <p>{respostaC}</p>)}</div>
+                    <div>{respostaP.map(respostaP => <p>{respostaP}</p>  )}</div>
                 </div>
                 <br></br>
                 <div className="ct2-list">

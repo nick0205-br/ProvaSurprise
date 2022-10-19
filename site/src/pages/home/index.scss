@@ -45,7 +45,6 @@
         min-width: 13em;
         background-color: #50a2dd;
         margin-bottom: 1em;
-        width: 13em;
         background-color: #055fb4;
         transition: background-color 1s ease 0.5s;
         border: 1px solid black;
@@ -81,9 +80,7 @@
         display: flex;
         flex-direction: row;
       }
-      .answer{
-        background-color: #50a2dd;
-        border: 1px solid black;
-        border-radius: 20px;
-        min-width: 13em;
+      .imagem{
+        width:1.5em;
+        height: 2em;
       }

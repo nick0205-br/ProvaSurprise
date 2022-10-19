@@ -1,18 +1,16 @@
 import{ useState} from "react"
 import { Link } from "react-router-dom";
-import calcularAcai from "../../service/acai.js"
+import cafe from "../../service/cafe.js";
 import '../home/index.scss';
-
 
 export default function Index() {
     const [numberone,setNumberone] = useState('');
     const [numbertwo,setNumbertwo] = useState('');
     const [numberthree,setNumberthree] = useState('');
-    const [numberfour,setNumberfour] = useState('');
     const [resposta,setResposta]= useState('');
 
     async function verificar(){
-        let x = calcularAcai(numberone, numbertwo, numberthree, numberfour)
+        let x = cafe(numberone, numbertwo, numberthree)
         setResposta(x);
     }
     return (
@@ -21,19 +19,16 @@ export default function Index() {
                 <Link  className="linkh" to='/'>Menu</Link>
             </div>
             <div className="ct2-conteudo">
-                <h1>Valor Total Açaí</h1>
+                <h1>Total Café</h1>
                 <div className="ct2-list">
                     <div>
-                        Quantidade Pequeno: <input type="number" value={numberone} onChange={e => setNumberone(Number(e.target.value))}></input>
+                        Número de Estudantes: <input type="number" value={numberone} onChange={e => setNumberone(Number(e.target.value))}></input>
                     </div>
                     <div>
-                        Quantidade Médio: <input type="number" value={numbertwo} onChange={e => setNumbertwo(Number(e.target.value))}></input>
+                        Capacidade em Litros: <input type="number" value={numbertwo} onChange={e => setNumbertwo(Number(e.target.value))}></input>
                     </div>
                     <div>
-                        Quantidade Grande: <input type="number" value={numberthree} onChange={e => setNumberthree(Number(e.target.value))}></input>
-                    </div>
-                    <div>
-                        Desconto: <input type="number" value={numberfour} onChange={e => setNumberfour(Number(e.target.value))}></input>
+                        Quantidade para cada Aluno: <input type="number" value={numberthree} onChange={e => setNumberthree(Number(e.target.value))}></input>
                     </div>
                     <div>
                         <button onClick ={verificar}>Verificar</button>

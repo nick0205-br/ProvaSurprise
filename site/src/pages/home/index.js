@@ -24,6 +24,7 @@ export default function Index() {
                     <Link className="link" to='/contarAte'> Contador entre Números </Link>
                     <Link className="link" to='/linha'> Criar Uma Linha </Link>
                     <Link className="link" to='/retangulo'> Criar Um Retângulo </Link>
+                    <Link className="link" to='/cafe'> Calcular Quantidade de Café </Link>
                 </div>
             </div>
         </main>
