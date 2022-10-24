@@ -13,6 +13,7 @@ import Retângulo from './pages/retangulo'
 import Orçamento from './pages/orçamento'
 import Ingresso from './pages/ingresso'
 import Café from './pages/café'
+import Empreendimento from './pages/empreendimento'
 
 
 export default function SiteRoutes() {
@@ -32,6 +33,7 @@ export default function SiteRoutes() {
                 <Route path='/orcamento' element={<Orçamento />} />
                 <Route path='/ingresso' element={<Ingresso />} />
                 <Route path='/cafe' element={<Café />} />
+                <Route path='/empreendimento' element={<Empreendimento />} />
 
             </Routes>
         </BrowserRouter>

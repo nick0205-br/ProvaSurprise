@@ -1,13 +1,19 @@
-export default function cafe(alunos, capacidade, qtdMl){
-    let a = ((qtdMl / 1000) * alunos) / capacidade;
-    if(a % capacidade){
-        return a;
-    }
-    else{
-        for (let cont = 0; a !== a % capacidade; cont++) { 
-            a++;
-            return a;           
-        }
-        return a;
-    }
-}
+export default function cafe(N,L,D) { 
+      
+    let qtdPorDia = N * D; 
+
+    let calculo = qtdPorDia / 1000; 
+
+    let resp = L; 
+
+    for(let i = L; calculo > i; i++ ){ 
+        resp = resp + L; 
+     
+    } 
+
+    return(resp); 
+
+} 
+
+// let x = Cafe(2,1,2000); 
+// console.log(x); 
