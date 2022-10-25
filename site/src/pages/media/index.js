@@ -14,7 +14,10 @@ export default function Index() {
     const [respostaMd,setRespostaMd]= useState(0);
 
     function Alunos(){
-        
+        let x = "";
+        for (let i = 0; i < numberone; i++) {
+            x = x +  Altura: <input type="number" value={"N" + i} onChange={e => setNumberone(Number(e.target.value))}></input>            
+        }
     }
 
     async function verificar(){
