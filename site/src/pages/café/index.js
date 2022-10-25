@@ -33,7 +33,7 @@ export default function Index() {
                     <div>
                         <button onClick ={verificar}>Verificar</button>
                     </div>
-                    <div>{resposta}</div>
+                    <div>Quantidade Total: {resposta}L</div>
                 </div>
                 <br></br>
                 <div className="ct2-list">
