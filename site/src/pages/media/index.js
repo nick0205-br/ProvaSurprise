@@ -1,18 +1,34 @@
 import{ useState } from "react"
 import { Link } from "react-router-dom";
-import JurosComposto from "../../service/juros.js";
+import maiorArr from "../../service/maiorArr";
+import menorArr from "../../service/menorArr";
+import mediaArr from "../../service/médiaArr";
 import '../home/index.scss';
 
+
 export default function Index() {
-    const [numberone,setNumberone] = useState(0);
-    const [numbertwo,setNumbertwo] = useState(0);
-    const [numberthree,setNumberthree] = useState(0);
-    const [numberfour,setNumberfour] = useState(0);
-    const [respostaJ,setRespostaJ]= useState('');
+    const [numberone,setNumberone] = useState('');
+    const [respostaS,setRespostaS]= useState([]);
+    const [respostaMa,setRespostaMa]= useState(0);
+    const [respostaMe,setRespostaMe]= useState(0);
+    const [respostaMd,setRespostaMd]= useState(0);
+
+    function Alunos(){
+        
+    }
 
     async function verificar(){
-        let x = JurosComposto(numberone, numbertwo, numberthree, numberfour)
-        setRespostaJ(x);
+        let x = Alunos(numberone)
+        setRespostaS(x);
+
+        let y = maiorArr(numberone)
+        setRespostaMa(y);
+
+        let z = menorArr(numberone)
+        setRespostaMe(z);
+
+        let a = mediaArr(numberone)
+        setRespostaMd(a)
     }
     return (
         <main>
@@ -20,25 +36,20 @@ export default function Index() {
                 <Link  className="linkh" to='/'>Menu</Link>
             </div>
             <div className="ct2-conteudo">
-                <h1>Calcular Empreendimento</h1>
+                <h1>Criar Retângulo</h1>
                 <div className="ct2-list">
                     <div>
-                        Entrada: <input type="number" value={numberone} onChange={e => setNumberone(Number(e.target.value))}></input>
-                    </div>
-                    <div>
-                        Valor do Empreendimento: <input type="number" value={numbertwo} onChange={e => setNumbertwo(Number(e.target.value))}></input>
-                    </div>
-                    <div>
-                        Taxa(Anual): <input type="number" value={numberthree} onChange={e => setNumberthree(Number(e.target.value))}></input>
-                    </div>
-                    <div>
-                        Período(Em Anos): <input type="number" value={numberfour} onChange={e => setNumberfour(Number(e.target.value))}></input>
+                        Altura: <input type="number" value={numberone} onChange={e => setNumberone(Number(e.target.value))}></input>
                     </div>
                     <div>
                         <button onClick ={verificar}> Verificar </button>
                     </div>
                     <br></br>
-                    <div>{respostaJ}</div>
+                    <div>{respostaS.map(respostaS => <p>{respostaS}</p>)}</div>
+                    <div>{respostaMa.map(respostaMa => <p>{respostaMa}</p>)}</div>
+                    <div>{respostaMe.map(respostaMe => <p>{respostaMe}</p>)}</div>
+                    <div>{respostaMd.map(respostaMd => <p>{respostaMd}</p>  )}</div>
+                    <button onClick ={calcular}> Calcular </button>
                 </div>
                 <br></br>
                 <div className="ct2-list">
