@@ -1,5 +1,5 @@
 
-function mediaArr(arr) {
+export default function mediaArr(arr) {
     let soma = 0
     for(let i = 0; i < arr.length; i++) {
       soma = soma + arr[i]
@@ -8,5 +8,3 @@ function mediaArr(arr) {
     return média;
 }
 
-let z = mediaArr([2,2,2]);
-console.log(z);

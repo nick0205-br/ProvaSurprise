@@ -26,6 +26,7 @@ export default function Index() {
                     <Link className="link" to='/retangulo'> Criar Um Retângulo </Link>
                     <Link className="link" to='/cafe'> Calcular Quantidade de Café </Link>
                     <Link className="link" to='/empreendimento'> Calcular as Parcelas do seu Empreendimento </Link>
+                    <Link className="link" to='/media'> Calcular a Média de Nota dos seus Alunos </Link>
                 </div>
             </div>
         </main>

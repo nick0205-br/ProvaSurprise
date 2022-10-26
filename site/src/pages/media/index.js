@@ -3,55 +3,65 @@ import { Link } from "react-router-dom";
 import maiorArr from "../../service/maiorArr";
 import menorArr from "../../service/menorArr";
 import mediaArr from "../../service/médiaArr";
+import criarArray from "../../service/criarArr";
 import '../home/index.scss';
 
 
 export default function Index() {
-    const [numberone,setNumberone] = useState('');
-    const [respostaS,setRespostaS]= useState([]);
-    const [respostaMa,setRespostaMa]= useState(0);
-    const [respostaMe,setRespostaMe]= useState(0);
-    const [respostaMd,setRespostaMd]= useState(0);
+    const [qtd, setQtd] = useState(0);
+  const [notasAlunos, setNotasAlunos] = useState([]);
+  const [media, setMedia] = useState(0);
+  const [maior, setMaior] = useState(0);
+  const [menor, setMenor] = useState(0);
 
-    function Alunos(){
-        let x = "";
-        for (let i = 0; i < numberone; i++) {
-            x = x +  Altura: <input type="number" value={"N" + i} onChange={e => setNumberone(Number(e.target.value))}></input>            
-        }
-    }
 
-    async function verificar(){
-        let x = Alunos(numberone)
-        setRespostaS(x);
+  function okQtd() {
+    const x = criarArray(qtd);
+    setNotasAlunos(x);
+  }
 
-        let y = maiorArr(numberone)
-        setRespostaMa(y);
+  function alterar(pos, novoValor) {
+    notasAlunos[pos] = Number(novoValor);
+    setNotasAlunos([...notasAlunos]);
+  }
 
-        let z = menorArr(numberone)
-        setRespostaMe(z);
+  function calcular() {
+    const a = mediaArr(notasAlunos);
+    const b = maiorArr(notasAlunos);
+    const c = menorArr(notasAlunos);
 
-        let a = mediaArr(numberone)
-        setRespostaMd(a)
-    }
+    setMedia(a);
+    setMaior(b);
+    setMenor(c);
+  }
     return (
         <main>
             <div className="ct1-home">
                 <Link  className="linkh" to='/'>Menu</Link>
             </div>
             <div className="ct2-conteudo">
-                <h1>Criar Retângulo</h1>
+                <h1>Calcular Média</h1>
                 <div className="ct2-list">
                     <div>
-                        Altura: <input type="number" value={numberone} onChange={e => setNumberone(Number(e.target.value))}></input>
+                        Qtd. Alunos: <input type='text' value={qtd} onChange={e => setQtd(e.target.value)} />
+                        <button onClick={okQtd}> ok </button>
+                    </div>
+
+                    {notasAlunos.map((item, pos) => 
+                        <div>
+                            Aluno {pos+1}: <input type='text' value={notasAlunos[pos]} onChange={e => alterar(pos, e.target.value)} />
+                        </div>  
+                    )}
+                    <br></br>
+                    <div>
+                        Média: {media}
                     </div>
                     <div>
-                        <button onClick ={verificar}> Verificar </button>
+                        Maior: {maior}
                     </div>
-                    <br></br>
-                    <div>{respostaS.map(respostaS => <p>{respostaS}</p>)}</div>
-                    <div>{respostaMa.map(respostaMa => <p>{respostaMa}</p>)}</div>
-                    <div>{respostaMe.map(respostaMe => <p>{respostaMe}</p>)}</div>
-                    <div>{respostaMd.map(respostaMd => <p>{respostaMd}</p>  )}</div>
+                    <div>
+                        Menor: {menor}
+                    </div>
                     <button onClick ={calcular}> Calcular </button>
                 </div>
                 <br></br>
